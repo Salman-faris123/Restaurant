@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Palace - My Cart</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button><a href="index.html">Home</a></button></li>
+                <li><button><a href="menu.html">Menu</a></button></li>
+                <li><button><a href="cart.html">My Cart</a></button></li>
+                <li><button><a href="about.html">About Us</a></button></li>
+                <li><button><a href="contact.html">Contact</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cart">
+        <h2>My Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </ul>
+        <p>Total: <span id="cart-total">$0.00</span></p>
+        <button onclick="confirmOrder()">Confirm Order</button>
+    </section>
+
+    <script>
+        // Function to update the cart display
+        function updateCart() {
+            var cartList = document.getElementById('cart-items');
+            var cartTotal = document.getElementById('cart-total');
+            var total = 0;
+
+            // Get the cart data from Web Storage (localStorage)
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Clear the current cart display
+            cartList.innerHTML = '';
+
+            // Create a map to store item quantities
+            var itemQuantities = new Map();
+
+            // Populate the cart display with items
+            cart.forEach(function (item, index) {
+                var serialNumber = index + 1;
+                var quantity = itemQuantities.get(item.name) || 0;
+                itemQuantities.set(item.name, quantity + 1);
+
+                var li = document.createElement('li');
+                li.innerHTML = `<div class="cart-item">
+                                    <span>${serialNumber}. ${item.name} (x${quantity + 1}) - $${(item.price * (quantity + 1)).toFixed(2)}</span>
+                                    <button onclick="removeFromCart('${item.name}')">Remove</button>
+                                </div>`;
+                cartList.appendChild(li);
+                total += parseFloat(item.price);
+            });
+
+            // Update the total cost
+            cartTotal.textContent = '$' + total.toFixed(2);
+        }
+
+        // Function to remove one frequency of an item from the cart
+        function removeFromCart(itemName) {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var updatedCart = [];
+            var found = false;
+
+            for (var i = 0; i < cart.length; i++) {
+                if (cart[i].name === itemName && !found) {
+                    found = true;
+                } else {
+                    updatedCart.push(cart[i]);
+                }
+            }
+
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            updateCart();
+        }
+
+        // Function to confirm the order
+        function confirmOrder() {
+            // Here, you can implement the logic to send the order to the server or perform other actions
+            alert('Order confirmed! Thank you for choosing My Restaurant.');
+            localStorage.removeItem('cart'); // Clear the cart after confirming the order
+            updateCart(); // Update the cart display
+        }
+
+        // Call the updateCart function when the cart page loads to populate the cart items
+        window.addEventListener('load', updateCart);
+    </script>
+
+    <footer>
+        <p>&copy; 2023 Restaurant Palace</p>
+    </footer>
+</body>
+</html>
