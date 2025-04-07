@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Palace - My Cart</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+        button{
+            background-color: beige;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button><a href="index.html">Home</a></button></li>
+                <li><button><a href="menu.html">Menu</a></button></li>
+                <li><button><a href="cart.html">My Cart</a></button></li>
+                <li><button><a href="about.html">About Us</a></button></li>
+                <li><button><a href="contact.html">Contact</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cart">
+        <h2>My Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </ul>
+        <p>Total: <span id="cart-total">$0.00</span></p>
+        <button onclick="confirmOrder()">Confirm Order</button>
+    </section>
+
+    <script src="cart.js">
+        
+    </script>
+
+    <footer>
+        <p>&copy;  Restaurant Palace</p>
+    </footer>
+</body>
+</html>

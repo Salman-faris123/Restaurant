@@ -1,0 +1,109 @@
+/* Reset some default styles for consistency */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    text-align: center;
+
+}
+
+/* Apply some basic styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+html{
+    height: 100%;
+}
+
+header {
+    background-color: #333;
+    color: #130d0d;
+    padding: 10px 0;
+    text-decoration-line: none;
+}
+
+nav ul {
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li  {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Style the sections with background colors */
+section {
+    padding: 40px;
+}
+
+#home {
+    background-color: greenyellow;
+    text-align:justify;
+}
+h1{
+    text-align: center;
+}
+#cart {
+    background-color: aqua;
+}
+
+#menu ul {
+    background-color: burlywood ;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#menu ul li {
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+#menu img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+#menu h3 {
+    margin: 10px 0;
+}
+
+#menu span {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #ff6600;
+}
+
+#about {
+    background-color: #b18975; /* Light blue background color */
+}
+
+#contact {
+    background-color: #c6bbb0;
+    min-height: 100%; /* Light orange background color */
+}
+
+footer {
+    margin-top: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Add more CSS for styling as needed */
+button{
+    background-color: red;
+    border: none;
+}

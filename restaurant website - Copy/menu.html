@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Palace - Menu</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button><a href="index.html">Home</a></button></li>
+                <li><button><a href="menu.html">Menu</a></button></li>
+                <li><button><a href="cart.html">My Cart</a></button></li>
+                <li><button><a href="about.html">About Us</a></button></li>
+                <li><button><a href="contact.html">Contact</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <!-- Menu items and filters go here -->
+        
+        <!-- Filter Buttons -->
+        <div id="menu-filters">
+            <button onclick="filterMenu('all')">All</button>
+            <button onclick="filterMenu('veg')">Veg</button>
+            <button onclick="filterMenu('nonveg')">Non-Veg</button>
+            <button onclick="filterMenu('juice')">Juice</button>
+            <button onclick="filterMenu('chats')">Chats</button>
+            <button onclick="filterMenu('icecream')">Ice Cream</button>
+            <button onclick="filterMenu('starters')">Starters</button>
+        </div>
+
+        <!-- Menu Items -->
+        <ul id="menu-list">
+            <!-- Veg Section -->
+            <li class="menu-item veg">
+                <img src="images\veg thali.jpeg" alt="Veg Dish 1">
+                <h4>Veg Thali</h4>
+                <p>Description of Veg Dish 1.</p>
+                <span>$10.00</span>
+                <button onclick="addToCart('Veg Thali', 10)">Add to Cart</button>
+            </li>
+            <li class="menu-item veg">
+                <img src="images\matar paneer.jpeg" alt="Veg Dish 2">
+                <h4>matar paneer</h4>
+                <p>Description of Veg Dish 2.</p>
+                <span>$8.00</span>
+                <button onclick="addToCart('Matar Paneer', 8)">Add to Cart</button>
+            </li>
+            <!-- Add more veg menu items here -->
+
+            <!-- Non-Veg Section -->
+            <li class="menu-item nonveg">
+                <img src="images\chicken biriyani.jpeg" alt="Non-Veg Dish 1">
+                <h4>Chicken Biriyani</h4>
+                <p>Description of Non-Veg Dish 1.</p>
+                <span>$15.00</span>
+                <button onclick="addToCart('Chicken Biriyani', 15)">Add to Cart</button>
+            </li>
+            <li class="menu-item nonveg">
+                <img src="images\chicken lollipop.jpeg" alt="Non-Veg Dish 2">
+                <h4>Chicken lollipop</h4>
+                <p>Description of Non-Veg Dish 2.</p>
+                <span>$18.00</span>
+                <button onclick="addToCart('Chicken lollipop', 18)">Add to Cart</button>
+            </li>
+            <!-- Add more non-veg menu items here -->
+
+            <!-- Juice Section -->
+            <li class="menu-item juice">
+                <img src="images\mango juice.jpeg" alt="Juice 1">
+                <h4>Mango Juice</h4>
+                <p>Description of Juice 1.</p>
+                <span>$5.00</span>
+                <button onclick="addToCart('Mango Juice', 5)">Add to Cart</button>
+            </li>
+            <li class="menu-item juice">
+                <img src="images\stawberry juice.jpeg" alt="Juice 2">
+                <h4>Stawberry Juice</h4>
+                <p>Description of Juice 2.</p>
+                <span>$7.00</span>
+                <button onclick="addToCart('Stawberry Juice', 7)">Add to Cart</button>
+            </li>
+            <!-- Add more juice menu items here -->
+
+            <!-- Chats Section -->
+            <li class="menu-item chats">
+                <img src="images/bhelpuri.jpeg" alt="Chat 1">
+                <h4>Bhelpuri</h4>
+                <p>Description of Chat 1.</p>
+                <span>$8.00</span>
+                <button onclick="addToCart('Bhelpuri', 8)">Add to Cart</button>
+            </li>
+            <li class="menu-item chats">
+                <img src="images\potato chaat.jpeg" alt="Chat 2">
+                <h4>Potato chaat</h4>
+                <p>Description of Chat 2.</p>
+                <span>$10.00</span>
+                <button onclick="addToCart('Potato chaat', 10)">Add to Cart</button>
+            </li>
+            <!-- Add more chat menu items here -->
+
+            <!-- Ice Cream Section -->
+            <li class="menu-item icecream">
+                <img src="images/gudbud.jpeg" alt="Ice Cream 1">
+                <h4>Gudbud</h4>
+                <p>Description of Ice Cream 1.</p>
+                <span>$4.00</span>
+                <button onclick="addToCart('Gudbud', 4)">Add to Cart</button>
+            </li>
+            <li class="menu-item icecream">
+                <img src="images\tiramisu.jpeg" alt="Ice Cream 2">
+                <h4>Tiramisu</h4>
+                <p>Description of Ice Cream 1.</p>
+                <span>$5.00</span>
+                <button onclick="addToCart('Tiramisu', 5)">Add to Cart</button>
+            </li>
+            <!-- Add more ice cream menu items here -->
+
+            <!-- Starters Section -->
+            <li class="menu-item starters">
+                <img src="images\french fries.jpeg" alt="Starter 1">
+                <h4>French Fries</h4>
+                <p>Description of Starter 1.</p>
+                <span>$7.00</span>
+                <button onclick="addToCart('French Fries', 7)">Add to Cart</button>
+            </li> 
+             <li class="menu-item starters">
+                <img src="images\soup.jpeg" alt="Starter 2">
+                <h4>soup</h4>
+                <p>Description of Starter 2.</p>
+                <span>$6.00</span>
+                <button onclick="addToCart('Soup', 7)">Add to Cart</button>
+            </li>
+            <!-- Add more starter menu items here -->
+        </ul>
+    </section>
+
+    <script src = "menu.js">
+        
+    </script>
+
+    <footer>
+        <p>&copy; Restaurant Palace</p>
+    </footer>
+</body>
+</html>

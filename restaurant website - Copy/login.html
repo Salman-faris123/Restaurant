@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/style.css">
+
+    <link rel="stylesheet" href="path/to/existing-stylesheet.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" onsubmit="return loginUser()">
+            <h2>Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        
+        <script>
+            function loginUser() {
+                // Add your login logic here.
+                // For simplicity, let's assume the login is successful.
+                
+                // Redirect to the home page after successful login.
+                window.location.href = "index.html";
+                
+                // Prevent the form from submitting (preventing default behavior).
+                return false;
+            }
+        </script>
+    </div>
+</body>
+</html>
